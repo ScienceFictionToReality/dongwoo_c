@@ -1,0 +1,25 @@
+#include <stdio.h >
+
+
+int strcpy(char* str1, char* str2) {
+   int i;
+   for (i = 0; i<sizeof(str1); i++) {
+      str1[i] = str2[i];//str2의 주소에 있는걸 str1의 주소에 넣기
+   }
+   return 0;
+}
+
+int main(void) {
+   char chArr[]="abc"; //char 배열에 문자열 상수 "ABC"를 복사하는 strcpy를 만들자
+   char *ps ="abc";
+   int i=0;
+   printf("chArr =%s\n", chArr);
+
+   //chArr[i]=a, ps[0]=a
+   strcpy(chArr, "ABC");
+
+   for(i=0;i<sizeof(chArr);i++) {
+      printf("chArr[%d] = %c\n", i, chArr[i]);
+   }
+   return 0;
+}
